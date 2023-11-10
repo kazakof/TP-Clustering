@@ -7,13 +7,14 @@ from sklearn import cluster
 from sklearn import metrics
 from sklearn.neighbors import NearestNeighbors
 from sklearn import preprocessing
-import hdbscan  
+import hdbscan
+
 ##################################################################
 # Exemple : DBSCAN Clustering
 
 
 path = './artificial/'
-name="atom.arff"
+name="convexe_bien_separe.arff"
 
 #path_out = './fig/'
 databrut = arff.loadarff(open(path+str(name), 'r'))
@@ -56,7 +57,7 @@ print('Number of clusters: %d' % n_clusters)
 print('Number of noise points: %d' % n_noise)
 
 plt.scatter(f0, f1, c=labels, s=8)
-plt.title("Données après clustering DBSCAN (1) - min_cluster_size= "+str(min_cluster_size)+" min_samples= "+str(min_samples))
+plt.title("Données après clustering HDBSCAN (1) - min_cluster_size= "+str(min_cluster_size)+" min_samples= "+str(min_samples))
 plt.show()
 
 
